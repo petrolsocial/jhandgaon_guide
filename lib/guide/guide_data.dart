@@ -1,0 +1,10 @@
+import 'package:jhandgaon_guide/guide/campaign_data.dart';
+
+class Guide {
+  static String INTRO_TEXT =
+      'The small-town crime drama has been the most popular genre to come out of modern Indian pop culture - the most driect point of it\'s ascent being Gangs of Wasseypur, while the roots trace back further to the 90s cult reign of Mumbai crime movies like Satya, Vastav, Rangeela, etc. where Ram Gopal Verma and Sanjay Dutt were the placeholders of what Anurag Kashyap and Nawazuddin Siddiqui occupy today in our pop culture. \n\nA certain fascination for this genre has gripped the nation and content in this genre has been boiled down to the formula by OTT platforms to guarantee a sure shot hit. \n\nJhandgaon is just one more gaon in the ever expanding Indian Crime Town Cinematic Universe. The difference here is that you get to live Jhandgaon in its full glory, not just watch it. The rival gangs, police love interests, smugglers, dacoits, beggars, innocent citizens are all you and your real life friends. \n\nSabka badla lega tera Faizal or what if Faizal says fuck it to the generational feud and becomes a cop? \n\nJamtara is the cyber crime capital of India, but you and your gang can make it the cyber crime capital of the world. Or will the cops outsmart you?\n\nAs syndicate head Pushpa, you expand into smuggling beyond red sandalwood to become the Pablo Escobar of India or quit smuggling chase political aspirations and become the Prime Minister.\n\nThe posibilites are endless!';
+  static String POSTER_IMAGES = 'assets/images/posters.png';
+  static String JHANDGAON_RPG_INTRO =
+      'Jhandgaon is small town in India, in the state of Uttarajhand. A gritty place where power prevails over peace - survivalism is the only constant here.\n\nPlaying Jhandgaon is all about living, dominating, exploring, avenging, or just doing pure bakchodi. The objective is yours.\n\nPick your unique character, pick a campaign, and prepare for chaos!\n\nThe rival gangs, police, love interests, smugglers, dacoits, beggars, innocent citizens are all you and your fellow players.';
+  static String JHANDGAON_IMAGE = 'assets/images/jhandgaonmarket.png';
+}
