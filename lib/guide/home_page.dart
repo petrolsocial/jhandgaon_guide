@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jhandgaon_guide/guide/campaign_data.dart';
+import 'package:jhandgaon_guide/guide/campaign_view.dart';
 import 'package:jhandgaon_guide/guide/guide_data.dart';
 import 'package:jhandgaon_guide/themes/custom_theme.dart';
 
@@ -7,6 +9,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> campaignWidgets = [];
+
+    for (var element in Campaigns.campaigns) {
+      campaignWidgets.add(CampaignView(campaignInfo: element));
+    }
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -30,27 +37,15 @@ class HomePage extends StatelessWidget {
                   style: CustomTheme.theme1.textTheme.headline2,
                 ),
               ),
-              Stack(
-                fit: StackFit.loose,
+              Column(
                 children: [
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(40),
-                        child: Text(
-                          Guide.INTRO_TEXT,
-                          style: CustomTheme.theme1.textTheme.bodyText1,
-                        ),
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(40),
+                    child: Text(
+                      Guide.INTRO_TEXT,
+                      style: CustomTheme.theme1.textTheme.bodyText1,
+                    ),
                   ),
-                  // Align(
-                  //   alignment: Alignment.bottomCenter,
-                  //   child: Image.asset(
-                  //     Guide.POSTER_IMAGES,
-                  //     fit: BoxFit.cover,
-                  //   ),
-                  // ),
                 ],
               ),
               Padding(
@@ -67,6 +62,14 @@ class HomePage extends StatelessWidget {
                   style: CustomTheme.theme1.textTheme.bodyText1,
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(40),
+                child: Image.asset(
+                  Guide.JHANDGAON_IMAGE,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              ...campaignWidgets,
             ],
           ),
         ),
