@@ -11,21 +11,33 @@ class CampaignView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: 100,
-        ),
-        Center(
-          child: Text(campaignInfo.name,
-              style: CustomTheme.theme1.textTheme.headline1),
-        ),
-        Center(
-          child: Image.asset(
-            campaignInfo.image,
-            fit: BoxFit.cover,
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
+          child: Center(
+            child: Text(
+              campaignInfo.name,
+              style: CustomTheme.theme1.textTheme.headline2,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
+          child: Center(
+            child: Image.asset(
+              campaignInfo.image,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: RichText(
             text: TextSpan(
               style: CustomTheme.theme1.textTheme.bodyText1,
@@ -41,10 +53,13 @@ class CampaignView extends StatelessWidget {
                 ),
               ],
             ),
+            textAlign: TextAlign.justify,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: RichText(
             text: TextSpan(
               style: CustomTheme.theme1.textTheme.bodyText1,
@@ -63,7 +78,9 @@ class CampaignView extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: RichText(
             text: TextSpan(
               style: CustomTheme.theme1.textTheme.bodyText1,
@@ -82,7 +99,9 @@ class CampaignView extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: RichText(
             text: TextSpan(
               style: CustomTheme.theme1.textTheme.bodyText1,
@@ -101,7 +120,9 @@ class CampaignView extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: RichText(
             text: TextSpan(
               style: CustomTheme.theme1.textTheme.bodyText1,
@@ -117,17 +138,44 @@ class CampaignView extends StatelessWidget {
                 ),
               ],
             ),
+            textAlign: TextAlign.justify,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
+          child: Text(
+            'Characters: ',
+            style: CustomTheme.theme1.textTheme.headline4,
+            textAlign: TextAlign.justify,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: getCharacterList(),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.symmetric(
+            vertical: 5,
+          ),
+          child: Text(
+            'Story: ',
+            style: CustomTheme.theme1.textTheme.headline4,
+            textAlign: TextAlign.justify,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 5,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: getPlotDetails(),
           ),
         ),
@@ -144,7 +192,7 @@ class CampaignView extends StatelessWidget {
         decoration: count % 2 != 0
             ? const BoxDecoration(color: Color.fromARGB(103, 191, 107, 205))
             : null,
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
         child: Row(
           children: [
             Image.network(
@@ -156,21 +204,44 @@ class CampaignView extends StatelessWidget {
               width: 20,
             ),
             Flexible(
-              child: RichText(
-                text: TextSpan(
-                  style: CustomTheme.theme1.textTheme.bodyText1,
-                  children: [
-                    TextSpan(
-                      text: character.name + ": ",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: CustomTheme.theme1.textTheme.bodyText1,
+                      children: [
+                        TextSpan(
+                          text: character.name + ": ",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: character.description,
+                        ),
+                      ],
                     ),
-                    TextSpan(
-                      text: character.description,
+                    textAlign: TextAlign.justify,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      style: CustomTheme.theme1.textTheme.bodyText1,
+                      children: [
+                        const TextSpan(
+                          text: 'Traits: ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: character.traits,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
               ),
             ),
           ],
@@ -184,18 +255,17 @@ class CampaignView extends StatelessWidget {
   List<Widget> getPlotDetails() {
     List<Widget> plotDetails = [];
     campaignInfo.plotDetails.forEach((head, description) {
-      Widget plotWidget = Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(head, style: CustomTheme.theme1.textTheme.headline3),
-            Text(
-              description,
-              style: CustomTheme.theme1.textTheme.bodyText1,
-            ),
-          ],
-        ),
+      Widget plotWidget = Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(head, style: CustomTheme.theme1.textTheme.headline4),
+          Text(
+            description,
+            style: CustomTheme.theme1.textTheme.bodyText1,
+            textAlign: TextAlign.justify,
+          ),
+          const SizedBox(height: 10),
+        ],
       );
       plotDetails.add(plotWidget);
     });

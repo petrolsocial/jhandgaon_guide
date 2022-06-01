@@ -71,6 +71,11 @@ flutter:
         - asset: assets/fonts/Sofia_Pro_Soft_Regular.ttf
         - asset: assets/fonts/Sofia_Pro_Soft_Bold.ttf
           weight: 700
+
+    - family: Cambria
+      fonts:
+        - asset: assets/fonts/Cambria.ttf
+          weight: 700
           
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

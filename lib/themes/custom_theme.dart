@@ -5,7 +5,7 @@ class CustomTheme {
     return ThemeData(
       primaryColor: Colors.black,
       scaffoldBackgroundColor: Colors.white,
-      fontFamily: 'Sofia Pro Soft',
+      fontFamily: 'Cambria',
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
           backgroundColor:
@@ -45,12 +45,20 @@ class CustomTheme {
         headline2: TextStyle(
           color: Color(0xFFBF500C),
           fontWeight: FontWeight.bold,
-          fontSize: 50,
+          fontSize: 40,
         ),
         headline3: TextStyle(
-            fontSize: 35, color: Colors.black, fontWeight: FontWeight.bold),
-        bodyText1: TextStyle(
           fontSize: 25,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        headline4: TextStyle(
+          fontSize: 18,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyText1: TextStyle(
+          fontSize: 18,
         ),
       ),
     );

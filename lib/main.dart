@@ -12,7 +12,7 @@ class JhandgaonGuide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Jhandgaon Guide',
       theme: CustomTheme.theme1,
       home: const HomePage(),
     );
