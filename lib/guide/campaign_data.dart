@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart' hide Characters;
 import 'package:jhandgaon_guide/guide/character_data.dart';
 
 class Campaigns {
@@ -64,6 +65,9 @@ class CampaignInfo {
   String sessionRequired;
   String flavour;
   String directorNotes;
+  GlobalKey campaignKey = GlobalKey();
+  GlobalKey charactersKey = GlobalKey();
+  GlobalKey storyKey = GlobalKey();
   List<CharacterInfo> characters = [];
   Map<String, String> plotDetails;
 

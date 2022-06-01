@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jhandgaon_guide/guide/guide_view.dart';
 import 'package:jhandgaon_guide/themes/custom_theme.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class JhandgaonGuide extends StatelessWidget {
     return MaterialApp(
       title: 'Jhandgaon Guide',
       theme: CustomTheme.theme1,
-      home: const JhandgaonGuide(),
+      home: const GuideView(),
     );
   }
 }
