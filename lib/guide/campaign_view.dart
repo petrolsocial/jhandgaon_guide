@@ -34,8 +34,8 @@ class CampaignView extends StatelessWidget {
             ),
             child: Center(
               child: Image(image: AssetImage(
-                campaignInfo.image, 
-                package: 'jhandgaon_guide',
+                  campaignInfo.image, 
+                  package: 'jhandgaon_guide',
                 ),
                 fit: BoxFit.cover,
               ),
