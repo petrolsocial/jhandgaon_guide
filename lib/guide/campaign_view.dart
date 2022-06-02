@@ -33,8 +33,8 @@ class CampaignView extends StatelessWidget {
               vertical: 10,
             ),
             child: Center(
-              child: Image.asset(
-                campaignInfo.image,
+              child: Image(image: AssetImage(
+                campaignInfo.image,),
                 fit: BoxFit.cover,
               ),
             ),

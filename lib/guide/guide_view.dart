@@ -60,7 +60,7 @@ class GuideView extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
                 opacity: 0.7,
-                image: AssetImage('assets/images/paper-texture.png'),
+                image: AssetImage('assets/images/paper-texture.png', package: 'jhandgaon_guide'),
                 fit: BoxFit.cover),
           ),
           child: Center(
@@ -114,7 +114,7 @@ class GuideView extends StatelessWidget {
                       height: 100,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 40),
+                      padding: const EdgeInsets.all(40),
                       child: Text(
                         'Intro',
                         style: CustomTheme.theme1.textTheme.headline2,
@@ -139,7 +139,7 @@ class GuideView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(40),
                       child:
-                          Image.asset('assets/images/jhandgaon_text_logo.png'),
+                          const Image(image: AssetImage('assets/images/jhandgaon_text_logo.png'),),
                       key: jhandgaonIntroKey,
                     ),
                     Padding(
@@ -152,11 +152,11 @@ class GuideView extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(40),
-                      child: Image.asset(
-                        Guide.JHANDGAON_IMAGE,
+                      child: Image(image: AssetImage(
+                        Guide.JHANDGAON_IMAGE,),
                         fit: BoxFit.cover,
-                      ),
-                    ),
+                      ),),
+                    
                     ...campaignWidgets,
                   ],
                 ),
