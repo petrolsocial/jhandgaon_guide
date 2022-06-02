@@ -139,7 +139,7 @@ class GuideView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(40),
                       child:
-                          const Image(image: AssetImage('assets/images/jhandgaon_text_logo.png'),),
+                          const Image(image: AssetImage('assets/images/jhandgaon_text_logo.png',package: 'jhandgaon_guide'),),
                       key: jhandgaonIntroKey,
                     ),
                     Padding(
