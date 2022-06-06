@@ -71,7 +71,7 @@ class GuideView extends StatelessWidget {
                   children: [
                     Center(
                         child: Padding(
-                      padding: const EdgeInsets.all(50),
+                      padding: const EdgeInsets.all(25),
                       child: Text(
                         'Welcome To Jhandgaon',
                         style: CustomTheme.theme1.textTheme.headline1,
@@ -80,7 +80,7 @@ class GuideView extends StatelessWidget {
                     )),
                     Center(
                       child: Padding(
-                        padding: const EdgeInsets.all(40),
+                        padding: const EdgeInsets.all(20),
                         child: Text(
                           'Content',
                           style: CustomTheme.theme1.textTheme.headline2,
@@ -114,7 +114,7 @@ class GuideView extends StatelessWidget {
                       height: 100,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40),
+                      padding: const EdgeInsets.all(20),
                       child: Text(
                         'Intro',
                         style: CustomTheme.theme1.textTheme.headline2,
@@ -124,7 +124,7 @@ class GuideView extends StatelessWidget {
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(40),
+                          padding: const EdgeInsets.all(20),
                           child: Text(
                             Guide.INTRO_TEXT,
                             style: CustomTheme.theme1.textTheme.bodyText1,
@@ -137,13 +137,13 @@ class GuideView extends StatelessWidget {
                       height: 100,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40),
+                      padding: const EdgeInsets.all(20),
                       child:
                           const Image(image: AssetImage('assets/images/jhandgaon_text_logo.png', package: 'jhandgaon_guide'),),
                       key: jhandgaonIntroKey,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40),
+                      padding: const EdgeInsets.all(20),
                       child: Text(
                         Guide.JHANDGAON_RPG_INTRO,
                         style: CustomTheme.theme1.textTheme.bodyText1,
@@ -151,7 +151,7 @@ class GuideView extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(40),
+                      padding: const EdgeInsets.all(20),
                       child: Image(image: AssetImage(
                         Guide.JHANDGAON_IMAGE,
                         package: 'jhandgaon_guide',),
