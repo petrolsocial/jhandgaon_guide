@@ -40,25 +40,25 @@ class CustomTheme {
         ),
         headline1: TextStyle(
           color: Color(0xFFBF500C),
-          fontSize: 80,
+          fontSize: 60,
         ),
         headline2: TextStyle(
           color: Color(0xFFBF500C),
           fontWeight: FontWeight.bold,
-          fontSize: 40,
+          fontSize: 30,
         ),
         headline3: TextStyle(
-          fontSize: 25,
+          fontSize: 20,
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
         headline4: TextStyle(
-          fontSize: 18,
+          fontSize: 15,
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
         bodyText1: TextStyle(
-          fontSize: 18,
+          fontSize: 15,
         ),
       ),
     );

@@ -11,7 +11,7 @@ class CampaignView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(40),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,8 +33,10 @@ class CampaignView extends StatelessWidget {
               vertical: 10,
             ),
             child: Center(
-              child: Image.asset(
-                campaignInfo.image,
+              child: Image(
+                image: AssetImage(
+                  campaignInfo.image,
+                ),
                 fit: BoxFit.cover,
               ),
             ),
@@ -206,7 +208,7 @@ class CampaignView extends StatelessWidget {
             CachedNetworkImage(
               imageUrl: character.tokenImage,
               fit: BoxFit.cover,
-              height: 120,
+              height: 80,
             ),
             const SizedBox(
               width: 20,
