@@ -9,16 +9,23 @@ class GuideView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<CampaignView> campaignWidgets = [];
+    List<Widget> campaignWidgets = [];
     List<Widget> indexButtons = [];
+    List<Widget> playerManifestWidgets = [];
+    List<Widget> directorGuidelinesWidgets = [];
     final introKey = GlobalKey();
     final jhandgaonIntroKey = GlobalKey();
+    final playerManifestoKey = GlobalKey();
+    final directorsGuidelinesKey = GlobalKey();
     for (var element in Campaigns.campaigns) {
       CampaignView campaign = CampaignView(
         campaignInfo: element,
       );
       campaignWidgets.add(
-        campaign,
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: campaign,
+        ),
       );
 
       indexButtons.add(
@@ -54,6 +61,55 @@ class GuideView extends StatelessWidget {
         ),
       );
     }
+
+    Guide.playerManifesto.forEach(
+      (key, value) {
+        playerManifestWidgets.add(
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  key,
+                  style: CustomTheme.theme1.textTheme.headline3,
+                  textAlign: TextAlign.justify,
+                ),
+                Text(
+                  value,
+                  style: CustomTheme.theme1.textTheme.bodyText1,
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+    Guide.directorGuidelines.forEach(
+      (key, value) {
+        directorGuidelinesWidgets.add(
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  key,
+                  style: CustomTheme.theme1.textTheme.headline3,
+                  textAlign: TextAlign.justify,
+                ),
+                Text(
+                  value,
+                  style: CustomTheme.theme1.textTheme.bodyText1,
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -96,7 +152,7 @@ class GuideView extends StatelessWidget {
                               Scrollable.ensureVisible(
                                   introKey.currentContext!);
                             }),
-                            child: const Text('Introduction'),
+                            child: const Text('What is Improv Fantasy?'),
                           ),
                           TextButton(
                             onPressed: (() {
@@ -106,6 +162,20 @@ class GuideView extends StatelessWidget {
                             child: const Text('Jhandgaon Intro'),
                           ),
                           ...indexButtons,
+                          TextButton(
+                            onPressed: (() {
+                              Scrollable.ensureVisible(
+                                  playerManifestoKey.currentContext!);
+                            }),
+                            child: const Text('Player Manifesto'),
+                          ),
+                          TextButton(
+                            onPressed: (() {
+                              Scrollable.ensureVisible(
+                                  directorsGuidelinesKey.currentContext!);
+                            }),
+                            child: const Text('Director Guidelines'),
+                          ),
                         ],
                         crossAxisAlignment: CrossAxisAlignment.start,
                       ),
@@ -116,32 +186,28 @@ class GuideView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
-                        'Intro',
+                        'What is Improv Fantasy?',
                         style: CustomTheme.theme1.textTheme.headline2,
                         key: introKey,
                       ),
                     ),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: Text(
-                            Guide.INTRO_TEXT,
-                            style: CustomTheme.theme1.textTheme.bodyText1,
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        Guide.IMPROV_FANTASY_INTRO,
+                        style: CustomTheme.theme1.textTheme.bodyText1,
+                        textAlign: TextAlign.justify,
+                      ),
                     ),
                     const SizedBox(
                       height: 100,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20),
-                      child:
-                          const Image(
-                            image: AssetImage('assets/images/jhandgaon_text_logo.png'),
-                          ),
+                      child: const Image(
+                        image:
+                            AssetImage('assets/images/jhandgaon_text_logo.png'),
+                      ),
                       key: jhandgaonIntroKey,
                     ),
                     Padding(
@@ -154,12 +220,35 @@ class GuideView extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20),
-                      child: Image(image: AssetImage(
-                        Guide.JHANDGAON_IMAGE,
+                      child: Image(
+                        image: AssetImage(
+                          Guide.JHANDGAON_IMAGE,
+                        ),
+                        fit: BoxFit.cover,
                       ),
-                      fit: BoxFit.cover,
-                    ),),
+                    ),
                     ...campaignWidgets,
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        'Player Manifesto',
+                        style: CustomTheme.theme1.textTheme.headline2,
+                        key: playerManifestoKey,
+                      ),
+                    ),
+                    ...playerManifestWidgets,
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        'Director Guidelines',
+                        style: CustomTheme.theme1.textTheme.headline2,
+                        key: directorsGuidelinesKey,
+                      ),
+                    ),
+                    ...directorGuidelinesWidgets,
                   ],
                 ),
               ),
