@@ -165,6 +165,20 @@ class GuideView extends StatelessWidget {
                                 child: const Text('Jhandgaon Intro'),
                               ),
                               ...indexButtons,
+                              TextButton(
+                                onPressed: (() {
+                                  Scrollable.ensureVisible(
+                                      playerManifestoKey.currentContext!);
+                                }),
+                                child: const Text('Player Manifesto'),
+                              ),
+                              TextButton(
+                                onPressed: (() {
+                                  Scrollable.ensureVisible(
+                                      directorsGuidelinesKey.currentContext!);
+                                }),
+                                child: const Text('Director Guidelines'),
+                              ),
                             ],
                             crossAxisAlignment: CrossAxisAlignment.start,
                           ),
