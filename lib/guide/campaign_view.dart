@@ -11,7 +11,7 @@ class CampaignView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(vertical: 60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,8 +33,9 @@ class CampaignView extends StatelessWidget {
               vertical: 10,
             ),
             child: Center(
-              child: Image(image: AssetImage(
-                  campaignInfo.image, 
+              child: Image(
+                image: AssetImage(
+                  campaignInfo.image,
                   package: 'jhandgaon_guide',
                 ),
                 fit: BoxFit.cover,

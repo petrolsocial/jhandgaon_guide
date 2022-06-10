@@ -39,26 +39,26 @@ class CustomTheme {
           color: Colors.white,
         ),
         headline1: TextStyle(
-          color: Color(0xFFBF500C),
-          fontSize: 60,
-        ),
+            color: Color.fromARGB(255, 142, 6, 6),
+            fontSize: 60,
+            fontWeight: FontWeight.bold),
         headline2: TextStyle(
-          color: Color(0xFFBF500C),
+          color: Color.fromARGB(255, 142, 6, 6),
           fontWeight: FontWeight.bold,
-          fontSize: 30,
+          fontSize: 40,
         ),
         headline3: TextStyle(
-          fontSize: 20,
+          fontSize: 25,
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
         headline4: TextStyle(
-          fontSize: 15,
+          fontSize: 20,
           color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
         bodyText1: TextStyle(
-          fontSize: 15,
+          fontSize: 20,
         ),
       ),
     );
